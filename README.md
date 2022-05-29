@@ -1,2 +1,3 @@
 # DashboardJoe
-HTML CSS Dashboard from FrontendJoe Online Course
+
+HTML CSS Dashboard practice
