@@ -1,7 +1,9 @@
+/* Variables */
+
 :root {
   --color-primary: #44f6fd;
   --color-secondary: #fffffa;
-  --color-tertiary: #363636;
+  --color-default: #363636;
 
   --color-background: #242424;
   --color-card: #1b1b1b;
@@ -15,6 +17,8 @@
   --length-md3: 1.5rem;
 }
 
+/* Reset */
+
 body {
   margin: 0%;
   font-family: "Poppins", Arial, sans-serif;
@@ -27,6 +31,8 @@ h1,h2,h3,h4,h5,h6 {
 margin: 0%;
 line-height: 1;
 }
+
+/* Shared Components */
 
 .container {
   padding: 1rem;
@@ -42,12 +48,10 @@ line-height: 1;
 .row {
   display: flex;
   gap: 1rem;
+  margin-bottom: var(--length-md1)
 }
 
 .card {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   padding: 1rem;
   background: var(--color-card);
   border-radius: 1rem;
@@ -60,12 +64,23 @@ line-height: 1;
   color: var(--color-label);
 }
 
+.card-h3 {
+  margin-bottom: var(--length-md1);
+  color: var(--color-label);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .card-h2 {
   font-size: 1.75rem;
   font-weight: 500;
 }
 
-.card-icon {
+/* Bespoke Card Styles - specific for this purpose */
+
+/* Card Headline */
+
+.card-headline-icon {
   display: grid;
   place-items: center;
   width: 3.5rem;
@@ -78,11 +93,15 @@ line-height: 1;
 
 .card-headline {
   width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
+
+/* Card List */
 
 .card-list {
   display: flex;
-  justify-content: flex-start;
   gap: 1.75rem;
   width: 50%;
 }
@@ -109,6 +128,41 @@ line-height: 1;
   background: var(--color-secondary)
 }
 
-.card-list-badge.tertiary {
-  background: var(--color-tertiary)
+.card-list-badge.default {
+  background: var(--color-default)
+}
+
+/* Card-progress */
+
+.card-progress {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-progress-donut {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--color-primary) 0% 33%,
+    var(--color-default) 33% 100%
+    );
+}
+
+.card-progress-donut::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 95%;
+  border-radius: inherit;
+  background: var(--color-card);
 }
