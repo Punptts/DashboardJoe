@@ -34,32 +34,48 @@ line-height: 1;
 
 /* Shared Components */
 
+/* Layout component */
+
 .container {
   padding: 1rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 800px) {
   .container {
     width: 800px;
     margin: 0 auto;
   }
 }
 
-.row {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: var(--length-md1)
+@media only screen and (min-width: 800px) {
+  .row {
+    display: flex;
+    gap: 1rem;
+  }
 }
+
+/* Card component */
 
 .card {
   flex-grow: 1;
   padding: 1rem;
+  margin-bottom: 1rem;
   background: var(--color-card);
   border-radius: 1rem;
 }
 
 .card.has-extra-padding {
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header-icon {
+  font-size: 1.25rem;
 }
 
 .card-h4 {
@@ -76,6 +92,10 @@ line-height: 1;
   font-weight: 500;
 }
 
+.card-h3.no-bottom-margin {
+  margin-bottom: 0;
+}
+
 .card-h2 {
   font-size: 1.75rem;
   font-weight: 500;
@@ -84,6 +104,8 @@ line-height: 1;
 .card-h2.has-bottom-margin {
   margin-bottom: 2rem;
 }
+
+/* Bar Chart */
 
 .card-bar-chart {
   display: flex;
@@ -118,6 +140,90 @@ line-height: 1;
   background: var(--color-default)
   }
 
+  /* Avatar list */
+
+.avatar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.avatar-list > li {
+  display: flex;
+  gap: var(--length-md2);
+  align-items: center;
+  margin-bottom: var(--length-md2)
+}
+
+.avatar {
+  width: rem;
+  height: 3rem;
+}
+
+.avatar-title,
+.avatar-notes {
+  display: block;
+  line-height: 1;
+}
+
+.avatar-title {
+  font-size: 1rem;
+  margin-bottom: 3px
+}
+
+.avatar-notes {
+  color: var(--color-label);
+  font-size: 00.875rem;
+}
+
+/* Timeline */
+
+.timeline {
+  padding-top: 1.25rem;
+  }
+  
+  .timeline-row {
+  position: relative;
+  display: flex;
+  padding-bottom: 1rem;
+  }
+  
+  .timeline-when {
+  width: 3.5rem;
+  min-width: 3.5rem;
+  max-width: 3.5rem;
+  font-size: 0.75rem;
+  }
+  
+  .timeline-badge {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  max-width: 0.75rem;
+  height: 0.75rem;
+  margin: 1.5px 0.5rem 0;
+  border-radius: 50%;
+  border: 3px solid var(--color-default);
+  background-color: var(--color-card);
+  }
+  
+  .timeline-row.primary .timeline-badge {
+    border-color: var(--color-primary);
+  }
+  
+  .timeline-badge::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 4.5rem;
+    width: 2px;
+    height: calc(100% - 22px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .timeline-text {
+    color: var(--color-label);
+    font-size: 0.875rem;
+  }
+
 /* Bespoke Card Styles - specific for this purpose */
 
 /* Card Headline */
@@ -134,18 +240,30 @@ line-height: 1;
 }
 
 .card-headline {
-  width: 25%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 800px) {
+  .card-headline {
+    width: 25%;
+  }
 }
 
 /* Card List */
 
 .card-list {
   display: flex;
+  align-content: center;
+  justify-content: space-evenly;
   gap: 1.75rem;
-  width: 50%;
+}
+
+@media only screen and (min-width: 800px) {
+  .card-list {
+    width: 50%;
+  }
 }
 
 .card-list-item {
@@ -176,9 +294,10 @@ line-height: 1;
 
 /* Card-progress */
 
-.card-progress {
-  width: 25%;
-  text-align: center;
+@media only screen and (min-width: 800px) {
+  .card-progress {
+    width: 25%;
+  }
 }
 
 .card-progress-donut {
@@ -208,9 +327,13 @@ line-height: 1;
 /* Growth Card */
 
 .card-growth {
-  width: 50%;
-
   text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+  .card-growth {
+    width: 50%;
+  }
 }
 
 .card-growth-headlines {
@@ -223,6 +346,21 @@ line-height: 1;
 /* Regions Card */
 
 .card-regions {
-  width: 25%;
+  padding: 1rem 1.5rem;
   text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+  .card-regions {
+    width: 25%;
+  }
+}
+
+/* Author and Activity Cards */
+
+@media only screen and (min-width: 800px) {
+  .card-author,
+  .card-activity {
+    width: 50%;
+  }
 }
