@@ -54,11 +54,11 @@ grid-template-areas:
   background: var(--color-background);
   opacity: 0;
   visibility: hidden;
-  animation: hide 0.5s;
-}s
+  animation: hide 0.3s linear;
+}
 
 @keyframes spin {
-  100% { transform: rotate(360deg) }
+  100% { transform: rotate(360deg)}
 }
 
 .spinner {
