@@ -13,6 +13,11 @@
         <link rel="stylesheet" href="styles/cards.css"> 
     </head>
     <body>
+        <div class="preloader">
+            <div class="spinner">
+
+            </div>
+        </div>
         <div class="container">
             <div class="card card-headline card-headline1">
                 <div>
@@ -103,7 +108,7 @@
                             Likes
                         </h4>
                         <h2 class="card-h2 has-bottom-margin">
-                            1.4K
+                            734
                         </h2>
                     </div>
                     <div>
@@ -111,7 +116,7 @@
                             Likes
                         </h4>
                         <h2 class="card-h2 has-bottom-margin">
-                            1.4K
+                            691
                         </h2>
                     </div>
                 </div>
@@ -168,7 +173,30 @@
                     <h3 class="card-h3 no-bottom-margin">
                         Authors
                     </h3>
-                    <span class="card-header-icon uil uil-ellipsis-v"></span>
+                    <div class="dropdown-wrapper">
+                        <input
+                            type="checkbox"
+                            class="dropdown-input"
+                            id="dropdown-input"
+                        />
+                        <label class="dropdown-label" for="dropdown-input">
+                            <span class="card-header-icon uil uil-ellipsis-v"></span>
+                        </label>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-menu-button">
+                                Some action
+                            </button>
+                            <button class="dropdown-menu-button">
+                                Another action
+                            </button>
+                            <button class="dropdown-menu-button">
+                                Click me
+                            </button>
+                            <button class="dropdown-menu-button">
+                                Delete Item
+                            </button>
+                        </div>
+                    </div>
                 </header>
                 <ul class="avatar-list">
                     <li>
