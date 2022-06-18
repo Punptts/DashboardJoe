@@ -1,5 +1,5 @@
 .container {
-padding: 1rem;
+padding: var(--length-md1);
 display: grid;
 grid-gap: var(--length-md1);
 grid-template-columns: repeat(2, 1fr);
@@ -44,7 +44,7 @@ grid-template-areas:
 
 .preloader {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   display: grid;
@@ -62,10 +62,42 @@ grid-template-areas:
 }
 
 .spinner {
-  width: 6rem;
-  height: 6rem;
+  width: var(--length-xl1);
+  height: var(--length-xl1);
   border-radius: 50%;
-  border: 6px solid var(--color-default);
+  border: var(--length-sm1) solid var(--color-default);
   border-top-color: var(--color-primary);
   animation: spin 1s infinite linear ;
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: var(--length-lg2);
+  height: 100%;
+  background-color: var(--color-card)
+}
+
+.sidebar .uil {
+  font-size: var(--length-md3);
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 800px) {
+  .sidebar {
+    display: flex;
+}
+}
+
+.sidebar-top,
+.sidebar-bottom {
+  display: grid;
+  place-items: center;
+  height: var(--length-lg3);
 }
